@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplikasi CRUD</title>
+    <link
+      rel="shortcut icon"
+      href="/static/images/title-logo.png"
+      type="image/x-icon"
+    />
+
+    <!-- ----linked font awesome cdn---- -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ----linked style.css file---- -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+
+    <!-- ----linked media.css file---- -->
+    <link rel="stylesheet" href="/static/css/media.css" />
+  </head>
+  <body>
+    <!-- ====markup header element==== -->
+    <header class="header">
+      <!-- ---header logo--- -->
+      <div class="header-logo">
+        <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="20" alt="MDB Logo"
+        loading="lazy" style="margin-top: -1px;" />
+      </div>
+
+      <!-- ---navigation--- -->
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a class="active" href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#about">Tentang kami</a>
+          </li>
+          <li>
+            <a href="#order">Saran</a>
+          </li>
+          <li>
+             <a href="http://localhost:5000/menu" class="btn btn-warning" type="button">Daftar Menu</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ---menu bar--- -->
+      <div id="menu-bar" class="fas fa-bars"></div>
+    </header>
+
+    <!-- ====markup main element==== -->
+
+    <main>
+      <!-- ====markup home section==== -->
+      <section id="home" class="home">
+        <div class="home-desc">
+          <h1>kami percaya makanan enak menawarkan senyum yang luar biasa</h1>
+          <p>
+            Terdapat makanan yang sangat lezat dengan di sajikan oleh karyawan kami yang sangat ramah
+          </p>
+          <a href="http://localhost:5000/login" class="btn btn-warning" type="button">Daftar Menu</a>
+        </div>
+
+        <div class="home-image">
+          <img src="/static/images/wagyu-01.jpg" alt="Net Error" />
+        </div>
+      </section>
+
+      <!-- ====markup about section==== -->
+      <section id="about" class="about">
+        <div class="about-image">
+          <img src="/static/images/2.jpg" alt="" />
+        </div>
+
+        <div class="about-desc">
+          <h2>Nusantara Izakaya</h2>
+          <p>
+            Selamat datang di Nusantara Izakaya, destinasi kuliner yang memadukan 
+            keindahan tradisional Indonesia dengan sentuhan khas Jepang. 
+            Sebagai restoran yang membanggakan kekayaan budaya dua negara, 
+            Nusantara Izakaya hadir untuk menghadirkan pengalaman kuliner unik yang memanjakan lidah dan jiwa.
+          </p>
+          <p>
+            Nusantara Izakaya menggabungkan kearifan lokal Nusantara dengan 
+            cita rasa autentik Jepang dalam hidangan-hidangan istimewa kami. 
+            Dari ramen yang lezat hingga sushi yang segar, setiap hidangan 
+            disiapkan dengan teliti oleh koki kami yang berbakat dan berpengalaman.
+          </p>
+
+          <input type="button" value="learn more" />
+        </div>
+      </section>
+      <!-- ====markup gallery section==== -->
+      <section id="order" class="order">
+        <h2>Kritik <span>& Saran</span></h2>
+
+        <div class="order-content">
+          <form action="#" class="order-form" autocomplete="off">
+            <input type="text" placeholder="name" required />
+            <input type="email" placeholder="email" required />
+            <input type="password" placeholder="password" required />
+            <input type="number" placeholder="phone Number" required />
+            <textarea cols="30" rows="8" placeholder="address"></textarea>
+
+            <button type="submit">Kirim</button>
+          </form>
+          <img src="/static/images/about-img.jpg" alt="Net Error" />
+        </div>
+      </section>
+    </main>
+
+    <!-- ====markup footer element==== -->
+    <footer class="footer">
+      <div class="contact-info">
+        <h4>contact info</h4>
+        <p>
+          <i class="fas fa-location-dot"></i
+          ><span>Banyuwangi</span>
+        </p>
+        <p><i class="fas fa-envelope"></i> <span>roin@gmail.com</span></p>
+        <p><i class="fas fa-phone"></i> <span>0843543534</span></p>
+        <p><i class="fas fa-phone"></i> <span>021-454676</span></p>
+      </div>
+
+      <div class="location">
+        <h4>lokasi cabang</h4>
+        <ul>
+          <li><a href="#">Banyuwangi</a></li>
+          <li><a href="#">Glagah</a></li>
+          <li><a href="#">Giri</a></li>
+          <li><a href="#">Tukang Kayu</a></li>
+        </ul>
+      </div>
+
+      <div class="quick-links">
+        <h4>quick links</h4>
+        <ul>
+          <li><a href="#home">home</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#order">saran</a></li>
+        </ul>
+      </div>
+
+      <div class="follow-us">
+        <h4>follow us</h4>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com" target="blank">facebook</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com" target="blank">instagram</a>
+          </li>
+          <li><a href="https://www.twitter.com" target="blank">twitter</a></li>
+          <li>
+            <a href="https://www.linkedin.com" target="blank">linkedin</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+        <p>Copyright 2023 || &copy all right reserved.</p>
+      </div>
+    </footer>
+
+    <!-- ----linked main.js file---- -->
+    <script src="./templates/js/main.js"></script>
+  </body>
+</html>

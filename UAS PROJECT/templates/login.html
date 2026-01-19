@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <style>
+        body {
+            height: 100vh; /* 100% tinggi viewport */
+            background: linear-gradient(to right, #4e73df, #1cc88a); /* background gradasi */
+            display: flex;
+            justify-content: center; /* horizontal center */
+            align-items: center;    /* vertical center */
+        }
+        .card {
+            width: 100%;
+            max-width: 400px; /* lebar card maksimal */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Card Login -->
+<div class="card shadow rounded">
+    <div class="card-header bg-primary text-white text-center">
+        <h2>Login</h2>
+    </div>
+    <div class="card-body">
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, msg in messages %}
+              <div class="alert alert-{{category}}">{{msg}}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <!-- Form Login -->
+        <form method="POST">
+            <div class="mb-3">
+                <input type="text" name="username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+    <div class="card-footer text-center">
+        <p class="mb-0">Belum punya akun? <a href="{{ url_for('register') }}">Daftar di sini</a></p>
+    </div>
+</div>
+
+</body>
+</html>

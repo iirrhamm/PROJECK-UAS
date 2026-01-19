@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Bagian Edit</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="col-sm-5">
+            <h2>Ubah Data Barang</h2>
+                <form action="url_for('edit', id_makanan={{data[0]}})" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" name="id_makanan" value="{{data[0]}}" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor</label>
+                        <input type="text" name="kode" value="{{data[1]}}" class="form-control" placeholder="Masukkan nomor" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Makanan</label>
+                        <input type="text" name="nama" value="{{data[2]}}" class="form-control" placeholder="Masukkan nama makanan" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Harga</label>
+                        <input type="number" name="harga" value="{{data[3]}}" class="form-control" placeholder="Masukkan harga" required />
+                    </div>
+                    <div class="form-group">
+                        <label>ID kategory</label>
+                        <input type="number" name="id_kategory" value="{{data[4]}}" class="form-control" placeholder="Masukkan kategory" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Gambar</label>
+                        <input type="file" name="file" value="{{data[5]}}">
+                    </div>
+                    <button type="submit" id="Submit" name="submit" class="btn btn-primary">Edit Barang</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

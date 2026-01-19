@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Aplikasi CRUD</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/title-logo.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+        <!-- Container wrapper -->
+        <div class="container">
+            <!-- Navbar brand -->
+            <a class="navbar-brand me-2" href="https://mdbgo.com/">
+                <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="16" alt="MDB Logo"
+                    loading="lazy" style="margin-top: -1px;" />
+            </a>
+
+            <!-- Toggle button -->
+            <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarButtonsExample"
+                aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nusantara Izakaya</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+
+                <div class="d-flex align-items-center">
+                    <div>
+                        <a href="http://localhost:5000/home" class="btn btn-primary px-8 me-3" role="button">Home</a>
+                        <a href="http://localhost:5000/makanan" class="btn btn-primary me-3" role="button">Menu
+                            Makanan</a>
+                        <a href="http://localhost:5000/minuman" class="btn btn-primary me-3" role="button">Menu
+                            Minuman</a>
+                        <a href="http://localhost:5000/tambahmenu" class="btn btn-primary me-3" role="button">Tambah Menu</a>
+                         <a href="http://localhost:5000/logout" class="btn btn-danger me-3" role="button">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+   <!-- ================= CONTENT ================= -->
+<section style="background-image: url(/static/images/background.jpg); background-size: cover;">
+    <div class="container py-5 text-center">
+
+        <h4 class="mb-5"
+            style="color:white; padding: 0.5rem 3rem; border: 0.2rem solid lightskyblue;
+                   border-radius: 50rem; font-size: 2rem;">
+            <strong>-- Daftar Menu --</strong>
+        </h4>
+
+        <div class="row">
+            {% for row in container %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow">
+
+                    <!-- GAMBAR (CLICK → MODAL) -->
+                    <a href="#"
+                       data-bs-toggle="modal"
+                       data-bs-target="#pesanModal"
+                       onclick="isiModal('{{ row[2] }}', '{{ row[3] }}')">
+                        <img src="{{ url_for('static', filename='upload/' + row[4]) }}"
+                             class="card-img-top"
+                             style="height:250px; object-fit:cover;">
+                    </a>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ row[2] }}</h5>
+                        <h6 class="text-success">Rp {{ row[3] }}</h6>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+</body>
+
+</html>

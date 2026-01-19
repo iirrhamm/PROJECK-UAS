@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Tambahkan Barang</title>
+        <link rel="icon" type="image/x-icon" href="/static/images/title-logo.png">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="col-sm-5">
+                <h2>Tambah Data Barang</h2>
+                <form action="{{ url_for('tambah') }}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Nomor</label>
+                        <input type="number" name="kode" class="form-control" placeholder="Masukkan Nomor" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Makanan</label>
+                        <input type="text" name="nama" class="form-control" placeholder="Masukkan nama makanan" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Harga</label>
+                        <input type="number" name="harga" class="form-control" placeholder="Masukkan harga" required />
+                    </div>
+                    <div class="form-group">
+                        <label>kategory</label>
+                        <select type="number" name="id_kategory" class="form-control" placeholder="Masukkan kategory" required />
+                        <option value="1">makanan</option>
+                        <option value="2">minuman</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Gambar</label>
+                        <input type="file" name="file">
+                    </div>
+                    <button type="submit" id="Submit" name="submit" class="btn btn-primary">Simpan Data</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html> 
